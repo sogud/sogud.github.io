@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Axios 基础配置 | 记录</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.07207228.css" as="style"><link rel="preload" href="/assets/js/app.d901bced.js" as="script"><link rel="preload" href="/assets/js/9.f70bb51d.js" as="script"><link rel="preload" href="/assets/js/4.04f9b0a3.js" as="script"><link rel="preload" href="/assets/js/29.d4a4f211.js" as="script"><link rel="preload" href="/assets/js/10.6c07ca04.js" as="script"><link rel="prefetch" href="/assets/js/11.ded4fa08.js"><link rel="prefetch" href="/assets/js/12.1566e8e9.js"><link rel="prefetch" href="/assets/js/13.8ebadafa.js"><link rel="prefetch" href="/assets/js/14.2eae6fcb.js"><link rel="prefetch" href="/assets/js/15.c3b09a13.js"><link rel="prefetch" href="/assets/js/16.82983314.js"><link rel="prefetch" href="/assets/js/17.e4d9cc9a.js"><link rel="prefetch" href="/assets/js/18.59d74889.js"><link rel="prefetch" href="/assets/js/19.a44f1b3b.js"><link rel="prefetch" href="/assets/js/20.59422492.js"><link rel="prefetch" href="/assets/js/21.3975ae56.js"><link rel="prefetch" href="/assets/js/22.fa8d8bd5.js"><link rel="prefetch" href="/assets/js/23.779af9e6.js"><link rel="prefetch" href="/assets/js/24.f87843ba.js"><link rel="prefetch" href="/assets/js/25.f7a5d2f5.js"><link rel="prefetch" href="/assets/js/26.3b6b0728.js"><link rel="prefetch" href="/assets/js/27.78ee38f2.js"><link rel="prefetch" href="/assets/js/28.cadc989a.js"><link rel="prefetch" href="/assets/js/3.b14bc519.js"><link rel="prefetch" href="/assets/js/30.53680683.js"><link rel="prefetch" href="/assets/js/31.2da0dfc8.js"><link rel="prefetch" href="/assets/js/32.52a3bbdb.js"><link rel="prefetch" href="/assets/js/33.a7e071b3.js"><link rel="prefetch" href="/assets/js/34.d2dfc4ee.js"><link rel="prefetch" href="/assets/js/35.08756908.js"><link rel="prefetch" href="/assets/js/36.f340a051.js"><link rel="prefetch" href="/assets/js/37.167fee8d.js"><link rel="prefetch" href="/assets/js/38.54b353a3.js"><link rel="prefetch" href="/assets/js/39.be2bf926.js"><link rel="prefetch" href="/assets/js/40.813518ee.js"><link rel="prefetch" href="/assets/js/41.7c06cc03.js"><link rel="prefetch" href="/assets/js/42.d860adcc.js"><link rel="prefetch" href="/assets/js/43.39f8f3b7.js"><link rel="prefetch" href="/assets/js/5.569dcaa8.js"><link rel="prefetch" href="/assets/js/6.571a211f.js"><link rel="prefetch" href="/assets/js/7.86d3a8a9.js"><link rel="prefetch" href="/assets/js/8.3f185511.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.cac334c8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.07207228.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><div><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/" class="nav-link home-link">记录 </a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="/list/" class="nav-link">文档</a></li><li class="nav-item"><a href="/tag/" class="nav-link">标签</a></li><li class="nav-item"><a href="https://github.com/sogud" target="_blank" rel="noopener noreferrer" class="nav-link external">Github</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/" class="nav-link mobile-home-link">记录 </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="/list/" class="nav-link">文档</a></li><li class="mobile-nav-item"><a href="/tag/" class="nav-link">标签</a></li><li class="mobile-nav-item"><a href="https://github.com/sogud" target="_blank" rel="noopener noreferrer" class="nav-link external">Github</a></li> <li class="mobile-nav-item"><!----></li></ul></div></div></div> <div class="content-wrapper"><div id="vuepress-theme-blog__post-layout"><article itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="vuepress-blog-theme-content"><header><h1 itemprop="name headline" class="post-title">
+        Axios 基础配置
+      </h1> <div class="post-meta"><!----> <div class="post-meta-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2018-01-13T16:07:32.000Z">
+      Sat Jan 13 2018
+    </time></div> <ul itemprop="keywords" class="post-meta-tags"><li class="post-tag" data-v-11530296><a href="/tag/Vue" data-v-11530296><span data-v-11530296>Vue</span></a></li><li class="post-tag" data-v-11530296><a href="/tag/Axios" data-v-11530296><span data-v-11530296>Axios</span></a></li></ul></div></header> <div itemprop="articleBody" class="content__default"><h1 id="axios-基础配置"><a href="#axios-基础配置" class="header-anchor">#</a> Axios 基础配置</h1> <h3 id="全局的-axios-默认值"><a href="#全局的-axios-默认值" class="header-anchor">#</a> 全局的 axios 默认值</h3> <p>引入 axios 后</p> <div class="language-js extra-class"><pre class="language-js"><code>axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>baseURL <span class="token operator">=</span> <span class="token string">'https://api.example.com'</span><span class="token punctuation">;</span>
+axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>common<span class="token punctuation">[</span><span class="token string">'Authorization'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token constant">AUTH_TOKEN</span><span class="token punctuation">;</span>
+axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>post<span class="token punctuation">[</span><span class="token string">'Content-Type'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'application/x-www-form-urlencoded'</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="自定义实例默认值"><a href="#自定义实例默认值" class="header-anchor">#</a> 自定义实例默认值</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 创建实例时设置配置的默认值</span>
+<span class="token keyword">var</span> instance <span class="token operator">=</span> axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+<span class="token literal-property property">baseURL</span><span class="token operator">:</span> <span class="token string">'https://api.example.com'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 在实例已创建后修改默认值</span>
+instance<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>post<span class="token punctuation">[</span><span class="token string">'Content-Type'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'application/json'</span>
+instance<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>common<span class="token punctuation">[</span><span class="token string">'Authorization'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token constant">AUTH_TOKEN</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">&quot;axios&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Loading<span class="token punctuation">,</span> Message <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;element-ui&quot;</span><span class="token punctuation">;</span> <span class="token comment">// 使用elementUI的组件来给提示</span>
+<span class="token keyword">import</span> router <span class="token keyword">from</span> <span class="token string">&quot;@/router&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> removeCookies <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;./auth&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> loadingInstance <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> <span class="token comment">// 加载全局的loading</span>
+
+<span class="token comment">//创建axios实例，在这里可以设置请求的默认配置</span>
+<span class="token keyword">const</span> instance <span class="token operator">=</span> axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">timeout</span><span class="token operator">:</span> <span class="token number">10000</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">baseURL</span><span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">VUE_APP_BASE_API</span><span class="token punctuation">,</span> <span class="token comment">//根据自己配置的反向代理去设置不同环境的baeUrl</span>
+  <span class="token literal-property property">headers</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">token</span><span class="token operator">:</span> sessionStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">&quot;token&quot;</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token string">&quot;&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">withCredentials</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 统一设置post请求头</span>
+instance<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>post<span class="token punctuation">[</span><span class="token string">&quot;Content-Type&quot;</span><span class="token punctuation">]</span> <span class="token operator">=</span>
+  <span class="token string">&quot;application/x-www-form-urlencoded&quot;</span><span class="token punctuation">;</span>
+<span class="token comment">//这里简单列出一些常见的http状态码信息，可以自己去调整配置</span>
+<span class="token keyword">const</span> httpCode <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token number">400</span><span class="token operator">:</span> <span class="token string">&quot;请求参数错误&quot;</span><span class="token punctuation">,</span>
+  <span class="token number">401</span><span class="token operator">:</span> <span class="token string">&quot;权限不足, 请重新登录&quot;</span><span class="token punctuation">,</span>
+  <span class="token number">403</span><span class="token operator">:</span> <span class="token string">&quot;服务器拒绝本次访问&quot;</span><span class="token punctuation">,</span>
+  <span class="token number">404</span><span class="token operator">:</span> <span class="token string">&quot;请求资源未找到&quot;</span><span class="token punctuation">,</span>
+  <span class="token number">500</span><span class="token operator">:</span> <span class="token string">&quot;内部服务器错误&quot;</span><span class="token punctuation">,</span>
+  <span class="token number">501</span><span class="token operator">:</span> <span class="token string">&quot;服务器不支持该请求中使用的方法&quot;</span><span class="token punctuation">,</span>
+  <span class="token number">502</span><span class="token operator">:</span> <span class="token string">&quot;网关错误&quot;</span><span class="token punctuation">,</span>
+  <span class="token number">504</span><span class="token operator">:</span> <span class="token string">&quot;网关超时&quot;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/** 添加请求拦截器 **/</span>
+instance<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
+  <span class="token parameter">config</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    loadingInstance <span class="token operator">=</span> Loading<span class="token punctuation">.</span><span class="token function">service</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token comment">// 发起请求时加载全局loading，请求失败或有响应时会关闭</span>
+      <span class="token literal-property property">spinner</span><span class="token operator">:</span> <span class="token string">&quot;fa fa-spinner fa-spin fa-3x fa-fw&quot;</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token string">&quot;拼命加载中...&quot;</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">background</span><span class="token operator">:</span> <span class="token string">&quot;rgba(0, 0, 0, 0.7)&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 这里：可以根据业务需求可以在发送请求之前做些什么:例如我这个是导出文件的接口，因为返回的是二进制流，所以需要设置请求响应类型为blob，就可以在此处设置。</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>config<span class="token punctuation">.</span>url<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">&quot;xx/xxxx&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      config<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">&quot;responseType&quot;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;blob&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 这里是文件上传，发送的是二进制流，所以需要设置请求头的'Content-Type'</span>
+    <span class="token comment">// if (config.url.includes('pur/contract/upload')) {</span>
+    <span class="token comment">//   config.headers['Content-Type'] = 'multipart/form-data'</span>
+    <span class="token comment">// }</span>
+    <span class="token comment">// if (config.url.includes('callback.htm')) {</span>
+    <span class="token comment">//   config.headers['Access-Control-Allow-Origin'] = 'xxxxxx'</span>
+    <span class="token comment">// }</span>
+    <span class="token keyword">return</span> config<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token parameter">error</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 对请求错误做些什么</span>
+    <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/** 添加响应拦截器  **/</span>
+instance<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
+  <span class="token parameter">response</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    loadingInstance<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// console.log(response)</span>
+    <span class="token comment">// 响应结果里的status: 与后台的约定，可以根据实际情况去做对应的判断</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">.</span>status <span class="token operator">==</span> <span class="token string">&quot;200&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token function">Message</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token comment">// message: response.data.message,</span>
+        <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token string">&quot;出错了~&quot;</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">&quot;error&quot;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token parameter">error</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    loadingInstance<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">.</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 根据请求失败的http状态码去给用户相应的提示</span>
+      <span class="token keyword">let</span> tips <span class="token operator">=</span>
+        error<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status <span class="token keyword">in</span> httpCode
+          <span class="token operator">?</span> httpCode<span class="token punctuation">[</span>error<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status<span class="token punctuation">]</span>
+          <span class="token operator">:</span> error<span class="token punctuation">.</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>message<span class="token punctuation">;</span>
+      <span class="token function">Message</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>error<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>tips<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+        <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">&quot;error&quot;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">// token或者登陆失效情况下跳转到登录页面，根据实际情况，在这里可以根据不同的响应错误结果，做对应的事。这里我以401判断为例</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">401</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token function">removeCookies</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">/login</span><span class="token template-punctuation string">`</span></span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token function">Message</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token string">&quot;请求超时, 请刷新重试&quot;</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">&quot;error&quot;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">&quot;请求超时, 请刷新重试&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/* 统一封装get请求 */</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">get</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">url<span class="token punctuation">,</span> params<span class="token punctuation">,</span> config <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">instance</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">&quot;get&quot;</span><span class="token punctuation">,</span>
+      url<span class="token punctuation">,</span>
+      params<span class="token punctuation">,</span>
+      <span class="token operator">...</span>config
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">response</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">resolve</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">error</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/* 统一封装post请求  */</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">post</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">url<span class="token punctuation">,</span> data<span class="token punctuation">,</span> config <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">instance</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">&quot;post&quot;</span><span class="token punctuation">,</span>
+      url<span class="token punctuation">,</span>
+      data<span class="token punctuation">,</span>
+      <span class="token operator">...</span>config
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">response</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">resolve</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">error</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/* 或者写成下面这样： Promise.resolve() 和 Promise.reject()返回的是promise对象，二者都是语法糖  */</span>
+<span class="token comment">// export const post = (url, data, config = {}) =&gt; {</span>
+<span class="token comment">//   return instance({</span>
+<span class="token comment">//     method: 'post',</span>
+<span class="token comment">//     url,</span>
+<span class="token comment">//     data,</span>
+<span class="token comment">//     ...config</span>
+<span class="token comment">//   }).then(response =&gt; {</span>
+<span class="token comment">//     return Promise.resolve(response)</span>
+<span class="token comment">//   }).catch(error =&gt; {</span>
+<span class="token comment">//     return Promise.reject(error)</span>
+<span class="token comment">//   })</span>
+<span class="token comment">// }</span>
+
+</code></pre></div><p>api 文件夹 使用 返回promise</p> <div class="language- extra-class"><pre class="language-text"><code>import { get, post } from '@/utils/axios'
+
+export const login = (params) =&gt; post('/login', params)
+
+export const logout = (params) =&gt; post('/logout', params)
+</code></pre></div></div> <footer><!----> <hr> <!----></footer></article> <div class="sticker vuepress-toc"><div class="vuepress-toc-item vuepress-toc-h3 active"><a href="#全局的-axios-默认值" title="全局的 axios 默认值">全局的 axios 默认值</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#自定义实例默认值" title="自定义实例默认值">自定义实例默认值</a></div></div></div></div> <footer class="footer" data-v-246f3a3e><div class="footer-left-wrap" data-v-246f3a3e><ul class="links" data-v-246f3a3e><li class="links-item" data-v-246f3a3e><a href="/2018/01/13/axios%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/github.com.html" class="nav-link" data-v-246f3a3e>GitHub</a></li><li class="links-item" data-v-246f3a3e><a href="/2018/01/13/axios%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/github.com.html" class="nav-link" data-v-246f3a3e>Twitter</a></li></ul></div> <div class="footer-right-wrap" data-v-246f3a3e></div></footer></div></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.d901bced.js" defer></script><script src="/assets/js/9.f70bb51d.js" defer></script><script src="/assets/js/4.04f9b0a3.js" defer></script><script src="/assets/js/29.d4a4f211.js" defer></script><script src="/assets/js/10.6c07ca04.js" defer></script>
+  </body>
+</html>

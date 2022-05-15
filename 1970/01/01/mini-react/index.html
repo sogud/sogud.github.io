@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>实现一个 mini react | 记录</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.07207228.css" as="style"><link rel="preload" href="/assets/js/app.d901bced.js" as="script"><link rel="preload" href="/assets/js/9.f70bb51d.js" as="script"><link rel="preload" href="/assets/js/4.04f9b0a3.js" as="script"><link rel="preload" href="/assets/js/35.08756908.js" as="script"><link rel="preload" href="/assets/js/10.6c07ca04.js" as="script"><link rel="prefetch" href="/assets/js/11.ded4fa08.js"><link rel="prefetch" href="/assets/js/12.1566e8e9.js"><link rel="prefetch" href="/assets/js/13.8ebadafa.js"><link rel="prefetch" href="/assets/js/14.2eae6fcb.js"><link rel="prefetch" href="/assets/js/15.c3b09a13.js"><link rel="prefetch" href="/assets/js/16.82983314.js"><link rel="prefetch" href="/assets/js/17.e4d9cc9a.js"><link rel="prefetch" href="/assets/js/18.59d74889.js"><link rel="prefetch" href="/assets/js/19.a44f1b3b.js"><link rel="prefetch" href="/assets/js/20.59422492.js"><link rel="prefetch" href="/assets/js/21.3975ae56.js"><link rel="prefetch" href="/assets/js/22.fa8d8bd5.js"><link rel="prefetch" href="/assets/js/23.779af9e6.js"><link rel="prefetch" href="/assets/js/24.f87843ba.js"><link rel="prefetch" href="/assets/js/25.f7a5d2f5.js"><link rel="prefetch" href="/assets/js/26.3b6b0728.js"><link rel="prefetch" href="/assets/js/27.78ee38f2.js"><link rel="prefetch" href="/assets/js/28.cadc989a.js"><link rel="prefetch" href="/assets/js/29.d4a4f211.js"><link rel="prefetch" href="/assets/js/3.b14bc519.js"><link rel="prefetch" href="/assets/js/30.53680683.js"><link rel="prefetch" href="/assets/js/31.2da0dfc8.js"><link rel="prefetch" href="/assets/js/32.52a3bbdb.js"><link rel="prefetch" href="/assets/js/33.a7e071b3.js"><link rel="prefetch" href="/assets/js/34.d2dfc4ee.js"><link rel="prefetch" href="/assets/js/36.f340a051.js"><link rel="prefetch" href="/assets/js/37.167fee8d.js"><link rel="prefetch" href="/assets/js/38.54b353a3.js"><link rel="prefetch" href="/assets/js/39.be2bf926.js"><link rel="prefetch" href="/assets/js/40.813518ee.js"><link rel="prefetch" href="/assets/js/41.7c06cc03.js"><link rel="prefetch" href="/assets/js/42.d860adcc.js"><link rel="prefetch" href="/assets/js/43.39f8f3b7.js"><link rel="prefetch" href="/assets/js/5.569dcaa8.js"><link rel="prefetch" href="/assets/js/6.571a211f.js"><link rel="prefetch" href="/assets/js/7.86d3a8a9.js"><link rel="prefetch" href="/assets/js/8.3f185511.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.cac334c8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.07207228.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><div><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/" class="nav-link home-link">记录 </a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="/list/" class="nav-link">文档</a></li><li class="nav-item"><a href="/tag/" class="nav-link">标签</a></li><li class="nav-item"><a href="https://github.com/sogud" target="_blank" rel="noopener noreferrer" class="nav-link external">Github</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/" class="nav-link mobile-home-link">记录 </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="/list/" class="nav-link">文档</a></li><li class="mobile-nav-item"><a href="/tag/" class="nav-link">标签</a></li><li class="mobile-nav-item"><a href="https://github.com/sogud" target="_blank" rel="noopener noreferrer" class="nav-link external">Github</a></li> <li class="mobile-nav-item"><!----></li></ul></div></div></div> <div class="content-wrapper"><div id="vuepress-theme-blog__post-layout"><article itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="vuepress-blog-theme-content"><header><h1 itemprop="name headline" class="post-title">
+        实现一个 mini react
+      </h1> <div class="post-meta"><!----> <!----> <ul itemprop="keywords" class="post-meta-tags"><li class="post-tag" data-v-11530296><a href="/tag/react" data-v-11530296><span data-v-11530296>react</span></a></li></ul></div></header> <div itemprop="articleBody" class="content__default"><p>https://pomb.us/build-your-own-react/</p> <p>注释版本</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">createElement</span><span class="token punctuation">(</span><span class="token parameter">type<span class="token punctuation">,</span> props<span class="token punctuation">,</span> <span class="token operator">...</span>children</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">,</span>
+    <span class="token literal-property property">props</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token operator">...</span>props<span class="token punctuation">,</span>
+      <span class="token literal-property property">children</span><span class="token operator">:</span> children<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">child</span> <span class="token operator">=&gt;</span>
+        <span class="token keyword">typeof</span> child <span class="token operator">===</span> <span class="token string">&quot;object&quot;</span> <span class="token operator">?</span> child <span class="token operator">:</span> <span class="token function">createTextElement</span><span class="token punctuation">(</span>child<span class="token punctuation">)</span>
+      <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">createTextElement</span><span class="token punctuation">(</span><span class="token parameter">text</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">&quot;TEXT_ELEMENT&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">props</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">nodeValue</span><span class="token operator">:</span> text<span class="token punctuation">,</span>
+      <span class="token literal-property property">children</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">createDom</span><span class="token punctuation">(</span><span class="token parameter">fiber</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> dom <span class="token operator">=</span>
+    fiber<span class="token punctuation">.</span>type <span class="token operator">==</span> <span class="token string">&quot;TEXT_ELEMENT&quot;</span> <span class="token operator">?</span> document<span class="token punctuation">.</span><span class="token function">createTextNode</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span> <span class="token operator">:</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span>fiber<span class="token punctuation">.</span>type<span class="token punctuation">)</span>
+
+  <span class="token function">updateDom</span><span class="token punctuation">(</span>dom<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> fiber<span class="token punctuation">.</span>props<span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> dom
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">isEvent</span> <span class="token operator">=</span> <span class="token parameter">key</span> <span class="token operator">=&gt;</span> key<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">&quot;on&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token function-variable function">isProperty</span> <span class="token operator">=</span> <span class="token parameter">key</span> <span class="token operator">=&gt;</span> key <span class="token operator">!==</span> <span class="token string">&quot;children&quot;</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token function">isEvent</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token function-variable function">isNew</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">prev<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token parameter">key</span> <span class="token operator">=&gt;</span> prev<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">!==</span> next<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+<span class="token keyword">const</span> <span class="token function-variable function">isGone</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">prev<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token parameter">key</span> <span class="token operator">=&gt;</span> <span class="token operator">!</span><span class="token punctuation">(</span>key <span class="token keyword">in</span> next<span class="token punctuation">)</span>
+<span class="token keyword">function</span> <span class="token function">updateDom</span><span class="token punctuation">(</span><span class="token parameter">dom<span class="token punctuation">,</span> prevProps<span class="token punctuation">,</span> nextProps</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">//Remove old or changed event listeners</span>
+  Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>prevProps<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>isEvent<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">key</span> <span class="token operator">=&gt;</span> <span class="token operator">!</span><span class="token punctuation">(</span>key <span class="token keyword">in</span> nextProps<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token function">isNew</span><span class="token punctuation">(</span>prevProps<span class="token punctuation">,</span> nextProps<span class="token punctuation">)</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">name</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> eventType <span class="token operator">=</span> name<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+      dom<span class="token punctuation">.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span>eventType<span class="token punctuation">,</span> prevProps<span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token comment">// Remove old properties</span>
+  Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>prevProps<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>isProperty<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token function">isGone</span><span class="token punctuation">(</span>prevProps<span class="token punctuation">,</span> nextProps<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">name</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      dom<span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token comment">// Set new or changed properties</span>
+  Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>nextProps<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>isProperty<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token function">isNew</span><span class="token punctuation">(</span>prevProps<span class="token punctuation">,</span> nextProps<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">name</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      dom<span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token operator">=</span> nextProps<span class="token punctuation">[</span>name<span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token comment">// Add event listeners</span>
+  Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>nextProps<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>isEvent<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token function">isNew</span><span class="token punctuation">(</span>prevProps<span class="token punctuation">,</span> nextProps<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">name</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> eventType <span class="token operator">=</span> name<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+      dom<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span>eventType<span class="token punctuation">,</span> nextProps<span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">commitRoot</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  deletions<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>commitWork<span class="token punctuation">)</span>
+  <span class="token function">commitWork</span><span class="token punctuation">(</span>wipRoot<span class="token punctuation">.</span>child<span class="token punctuation">)</span>
+  currentRoot <span class="token operator">=</span> wipRoot
+  wipRoot <span class="token operator">=</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">commitWork</span><span class="token punctuation">(</span><span class="token parameter">fiber</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>fiber<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">let</span> domParentFiber <span class="token operator">=</span> fiber<span class="token punctuation">.</span>parent
+  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>domParentFiber<span class="token punctuation">.</span>dom<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    domParentFiber <span class="token operator">=</span> domParentFiber<span class="token punctuation">.</span>parent
+  <span class="token punctuation">}</span>
+  <span class="token keyword">const</span> domParent <span class="token operator">=</span> domParentFiber<span class="token punctuation">.</span>dom
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>fiber<span class="token punctuation">.</span>effectTag <span class="token operator">===</span> <span class="token string">&quot;PLACEMENT&quot;</span> <span class="token operator">&amp;&amp;</span> fiber<span class="token punctuation">.</span>dom <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    domParent<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>fiber<span class="token punctuation">.</span>dom<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>fiber<span class="token punctuation">.</span>effectTag <span class="token operator">===</span> <span class="token string">&quot;UPDATE&quot;</span> <span class="token operator">&amp;&amp;</span> fiber<span class="token punctuation">.</span>dom <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">updateDom</span><span class="token punctuation">(</span>fiber<span class="token punctuation">.</span>dom<span class="token punctuation">,</span> fiber<span class="token punctuation">.</span>alternate<span class="token punctuation">.</span>props<span class="token punctuation">,</span> fiber<span class="token punctuation">.</span>props<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>fiber<span class="token punctuation">.</span>effectTag <span class="token operator">===</span> <span class="token string">&quot;DELETION&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">commitDeletion</span><span class="token punctuation">(</span>fiber<span class="token punctuation">,</span> domParent<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">commitWork</span><span class="token punctuation">(</span>fiber<span class="token punctuation">.</span>child<span class="token punctuation">)</span>
+  <span class="token function">commitWork</span><span class="token punctuation">(</span>fiber<span class="token punctuation">.</span>sibling<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">commitDeletion</span><span class="token punctuation">(</span><span class="token parameter">fiber<span class="token punctuation">,</span> domParent</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>fiber<span class="token punctuation">.</span>dom<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    domParent<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>fiber<span class="token punctuation">.</span>dom<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token function">commitDeletion</span><span class="token punctuation">(</span>fiber<span class="token punctuation">.</span>child<span class="token punctuation">,</span> domParent<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">render</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> container</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  wipRoot <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">dom</span><span class="token operator">:</span> container<span class="token punctuation">,</span>
+    <span class="token literal-property property">props</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">children</span><span class="token operator">:</span> <span class="token punctuation">[</span>element<span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">alternate</span><span class="token operator">:</span> currentRoot
+  <span class="token punctuation">}</span>
+  deletions <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  nextUnitOfWork <span class="token operator">=</span> wipRoot
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> nextUnitOfWork <span class="token operator">=</span> <span class="token keyword">null</span>
+<span class="token keyword">let</span> currentRoot <span class="token operator">=</span> <span class="token keyword">null</span>
+<span class="token keyword">let</span> wipRoot <span class="token operator">=</span> <span class="token keyword">null</span>
+<span class="token keyword">let</span> deletions <span class="token operator">=</span> <span class="token keyword">null</span>
+
+<span class="token keyword">function</span> <span class="token function">workLoop</span><span class="token punctuation">(</span><span class="token parameter">deadline</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> shouldYield <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>nextUnitOfWork <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>shouldYield<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    nextUnitOfWork <span class="token operator">=</span> <span class="token function">performUnitOfWork</span><span class="token punctuation">(</span>nextUnitOfWork<span class="token punctuation">)</span>
+    shouldYield <span class="token operator">=</span> deadline<span class="token punctuation">.</span><span class="token function">timeRemaining</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">1</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>nextUnitOfWork <span class="token operator">&amp;&amp;</span> wipRoot<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">commitRoot</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">requestIdleCallback</span><span class="token punctuation">(</span>workLoop<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">requestIdleCallback</span><span class="token punctuation">(</span>workLoop<span class="token punctuation">)</span>
+
+<span class="token keyword">function</span> <span class="token function">performUnitOfWork</span><span class="token punctuation">(</span><span class="token parameter">fiber</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> isFunctionComponent <span class="token operator">=</span> fiber<span class="token punctuation">.</span>type <span class="token keyword">instanceof</span> <span class="token class-name">Function</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>isFunctionComponent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">updateFunctionComponent</span><span class="token punctuation">(</span>fiber<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token function">updateHostComponent</span><span class="token punctuation">(</span>fiber<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>fiber<span class="token punctuation">.</span>child<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> fiber<span class="token punctuation">.</span>child
+  <span class="token punctuation">}</span>
+  <span class="token keyword">let</span> nextFiber <span class="token operator">=</span> fiber
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>nextFiber<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>nextFiber<span class="token punctuation">.</span>sibling<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> nextFiber<span class="token punctuation">.</span>sibling
+    <span class="token punctuation">}</span>
+    nextFiber <span class="token operator">=</span> nextFiber<span class="token punctuation">.</span>parent
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> wipFiber <span class="token operator">=</span> <span class="token keyword">null</span>
+<span class="token keyword">let</span> hookIndex <span class="token operator">=</span> <span class="token keyword">null</span>
+
+<span class="token keyword">function</span> <span class="token function">updateFunctionComponent</span><span class="token punctuation">(</span><span class="token parameter">fiber</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  wipFiber <span class="token operator">=</span> fiber
+  hookIndex <span class="token operator">=</span> <span class="token number">0</span>
+  wipFiber<span class="token punctuation">.</span>hooks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token keyword">const</span> children <span class="token operator">=</span> <span class="token punctuation">[</span>fiber<span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span>fiber<span class="token punctuation">.</span>props<span class="token punctuation">)</span><span class="token punctuation">]</span>
+  <span class="token function">reconcileChildren</span><span class="token punctuation">(</span>fiber<span class="token punctuation">,</span> children<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token parameter">initial</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> oldHook <span class="token operator">=</span>
+    wipFiber<span class="token punctuation">.</span>alternate <span class="token operator">&amp;&amp;</span> wipFiber<span class="token punctuation">.</span>alternate<span class="token punctuation">.</span>hooks <span class="token operator">&amp;&amp;</span> wipFiber<span class="token punctuation">.</span>alternate<span class="token punctuation">.</span>hooks<span class="token punctuation">[</span>hookIndex<span class="token punctuation">]</span>
+  <span class="token keyword">const</span> hook <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">state</span><span class="token operator">:</span> oldHook <span class="token operator">?</span> oldHook<span class="token punctuation">.</span>state <span class="token operator">:</span> initial<span class="token punctuation">,</span>
+    <span class="token literal-property property">queue</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">const</span> actions <span class="token operator">=</span> oldHook <span class="token operator">?</span> oldHook<span class="token punctuation">.</span>queue <span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  actions<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">action</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    hook<span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token function">action</span><span class="token punctuation">(</span>hook<span class="token punctuation">.</span>state<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">const</span> <span class="token function-variable function">setState</span> <span class="token operator">=</span> <span class="token parameter">action</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    hook<span class="token punctuation">.</span>queue<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>action<span class="token punctuation">)</span>
+    wipRoot <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">dom</span><span class="token operator">:</span> currentRoot<span class="token punctuation">.</span>dom<span class="token punctuation">,</span>
+      <span class="token literal-property property">props</span><span class="token operator">:</span> currentRoot<span class="token punctuation">.</span>props<span class="token punctuation">,</span>
+      <span class="token literal-property property">alternate</span><span class="token operator">:</span> currentRoot
+    <span class="token punctuation">}</span>
+    nextUnitOfWork <span class="token operator">=</span> wipRoot
+    deletions <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+
+  wipFiber<span class="token punctuation">.</span>hooks<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>hook<span class="token punctuation">)</span>
+  hookIndex<span class="token operator">++</span>
+  <span class="token keyword">return</span> <span class="token punctuation">[</span>hook<span class="token punctuation">.</span>state<span class="token punctuation">,</span> setState<span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">updateHostComponent</span><span class="token punctuation">(</span><span class="token parameter">fiber</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>fiber<span class="token punctuation">.</span>dom<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    fiber<span class="token punctuation">.</span>dom <span class="token operator">=</span> <span class="token function">createDom</span><span class="token punctuation">(</span>fiber<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">reconcileChildren</span><span class="token punctuation">(</span>fiber<span class="token punctuation">,</span> fiber<span class="token punctuation">.</span>props<span class="token punctuation">.</span>children<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">reconcileChildren</span><span class="token punctuation">(</span><span class="token parameter">wipFiber<span class="token punctuation">,</span> elements</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> index <span class="token operator">=</span> <span class="token number">0</span>
+  <span class="token keyword">let</span> oldFiber <span class="token operator">=</span> wipFiber<span class="token punctuation">.</span>alternate <span class="token operator">&amp;&amp;</span> wipFiber<span class="token punctuation">.</span>alternate<span class="token punctuation">.</span>child
+  <span class="token keyword">let</span> prevSibling <span class="token operator">=</span> <span class="token keyword">null</span>
+
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>index <span class="token operator">&lt;</span> elements<span class="token punctuation">.</span>length <span class="token operator">||</span> oldFiber <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> element <span class="token operator">=</span> elements<span class="token punctuation">[</span>index<span class="token punctuation">]</span>
+    <span class="token keyword">let</span> newFiber <span class="token operator">=</span> <span class="token keyword">null</span>
+
+    <span class="token keyword">const</span> sameType <span class="token operator">=</span> oldFiber <span class="token operator">&amp;&amp;</span> element <span class="token operator">&amp;&amp;</span> element<span class="token punctuation">.</span>type <span class="token operator">==</span> oldFiber<span class="token punctuation">.</span>type
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>sameType<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      newFiber <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">type</span><span class="token operator">:</span> oldFiber<span class="token punctuation">.</span>type<span class="token punctuation">,</span>
+        <span class="token literal-property property">props</span><span class="token operator">:</span> element<span class="token punctuation">.</span>props<span class="token punctuation">,</span>
+        <span class="token literal-property property">dom</span><span class="token operator">:</span> oldFiber<span class="token punctuation">.</span>dom<span class="token punctuation">,</span>
+        <span class="token literal-property property">parent</span><span class="token operator">:</span> wipFiber<span class="token punctuation">,</span>
+        <span class="token literal-property property">alternate</span><span class="token operator">:</span> oldFiber<span class="token punctuation">,</span>
+        <span class="token literal-property property">effectTag</span><span class="token operator">:</span> <span class="token string">&quot;UPDATE&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>element <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>sameType<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      newFiber <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">type</span><span class="token operator">:</span> element<span class="token punctuation">.</span>type<span class="token punctuation">,</span>
+        <span class="token literal-property property">props</span><span class="token operator">:</span> element<span class="token punctuation">.</span>props<span class="token punctuation">,</span>
+        <span class="token literal-property property">dom</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">parent</span><span class="token operator">:</span> wipFiber<span class="token punctuation">,</span>
+        <span class="token literal-property property">alternate</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">effectTag</span><span class="token operator">:</span> <span class="token string">&quot;PLACEMENT&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>oldFiber <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>sameType<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      oldFiber<span class="token punctuation">.</span>effectTag <span class="token operator">=</span> <span class="token string">&quot;DELETION&quot;</span>
+      deletions<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>oldFiber<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>oldFiber<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      oldFiber <span class="token operator">=</span> oldFiber<span class="token punctuation">.</span>sibling
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      wipFiber<span class="token punctuation">.</span>child <span class="token operator">=</span> newFiber
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>element<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      prevSibling<span class="token punctuation">.</span>sibling <span class="token operator">=</span> newFiber
+    <span class="token punctuation">}</span>
+
+    prevSibling <span class="token operator">=</span> newFiber
+    index<span class="token operator">++</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> Didact <span class="token operator">=</span> <span class="token punctuation">{</span>
+  createElement<span class="token punctuation">,</span>
+  render<span class="token punctuation">,</span>
+  useState
+<span class="token punctuation">}</span>
+
+<span class="token comment">/** @jsx Didact.createElement */</span>
+<span class="token keyword">function</span> <span class="token function">Counter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>state<span class="token punctuation">,</span> setState<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>h1 onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">setState</span><span class="token punctuation">(</span><span class="token parameter">c</span> <span class="token operator">=&gt;</span> c <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">}</span> style<span class="token operator">=</span><span class="token string">&quot;user-select: none&quot;</span><span class="token operator">&gt;</span>
+      <span class="token literal-property property">Count</span><span class="token operator">:</span> <span class="token punctuation">{</span>state<span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> element <span class="token operator">=</span> <span class="token operator">&lt;</span>Counter <span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token keyword">const</span> container <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;root&quot;</span><span class="token punctuation">)</span>
+Didact<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>element<span class="token punctuation">,</span> container<span class="token punctuation">)</span>
+</code></pre></div></div> <footer><!----> <hr> <!----></footer></article> <!----></div></div> <footer class="footer" data-v-246f3a3e><div class="footer-left-wrap" data-v-246f3a3e><ul class="links" data-v-246f3a3e><li class="links-item" data-v-246f3a3e><a href="/1970/01/01/mini-react/github.com.html" class="nav-link" data-v-246f3a3e>GitHub</a></li><li class="links-item" data-v-246f3a3e><a href="/1970/01/01/mini-react/github.com.html" class="nav-link" data-v-246f3a3e>Twitter</a></li></ul></div> <div class="footer-right-wrap" data-v-246f3a3e></div></footer></div></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.d901bced.js" defer></script><script src="/assets/js/9.f70bb51d.js" defer></script><script src="/assets/js/4.04f9b0a3.js" defer></script><script src="/assets/js/35.08756908.js" defer></script><script src="/assets/js/10.6c07ca04.js" defer></script>
+  </body>
+</html>

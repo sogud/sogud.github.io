@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JavaScript 实现简单二叉查找树 | 记录</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.07207228.css" as="style"><link rel="preload" href="/assets/js/app.d901bced.js" as="script"><link rel="preload" href="/assets/js/9.f70bb51d.js" as="script"><link rel="preload" href="/assets/js/4.04f9b0a3.js" as="script"><link rel="preload" href="/assets/js/15.c3b09a13.js" as="script"><link rel="preload" href="/assets/js/10.6c07ca04.js" as="script"><link rel="prefetch" href="/assets/js/11.ded4fa08.js"><link rel="prefetch" href="/assets/js/12.1566e8e9.js"><link rel="prefetch" href="/assets/js/13.8ebadafa.js"><link rel="prefetch" href="/assets/js/14.2eae6fcb.js"><link rel="prefetch" href="/assets/js/16.82983314.js"><link rel="prefetch" href="/assets/js/17.e4d9cc9a.js"><link rel="prefetch" href="/assets/js/18.59d74889.js"><link rel="prefetch" href="/assets/js/19.a44f1b3b.js"><link rel="prefetch" href="/assets/js/20.59422492.js"><link rel="prefetch" href="/assets/js/21.3975ae56.js"><link rel="prefetch" href="/assets/js/22.fa8d8bd5.js"><link rel="prefetch" href="/assets/js/23.779af9e6.js"><link rel="prefetch" href="/assets/js/24.f87843ba.js"><link rel="prefetch" href="/assets/js/25.f7a5d2f5.js"><link rel="prefetch" href="/assets/js/26.3b6b0728.js"><link rel="prefetch" href="/assets/js/27.78ee38f2.js"><link rel="prefetch" href="/assets/js/28.cadc989a.js"><link rel="prefetch" href="/assets/js/29.d4a4f211.js"><link rel="prefetch" href="/assets/js/3.b14bc519.js"><link rel="prefetch" href="/assets/js/30.53680683.js"><link rel="prefetch" href="/assets/js/31.2da0dfc8.js"><link rel="prefetch" href="/assets/js/32.52a3bbdb.js"><link rel="prefetch" href="/assets/js/33.a7e071b3.js"><link rel="prefetch" href="/assets/js/34.d2dfc4ee.js"><link rel="prefetch" href="/assets/js/35.08756908.js"><link rel="prefetch" href="/assets/js/36.f340a051.js"><link rel="prefetch" href="/assets/js/37.167fee8d.js"><link rel="prefetch" href="/assets/js/38.54b353a3.js"><link rel="prefetch" href="/assets/js/39.be2bf926.js"><link rel="prefetch" href="/assets/js/40.813518ee.js"><link rel="prefetch" href="/assets/js/41.7c06cc03.js"><link rel="prefetch" href="/assets/js/42.d860adcc.js"><link rel="prefetch" href="/assets/js/43.39f8f3b7.js"><link rel="prefetch" href="/assets/js/5.569dcaa8.js"><link rel="prefetch" href="/assets/js/6.571a211f.js"><link rel="prefetch" href="/assets/js/7.86d3a8a9.js"><link rel="prefetch" href="/assets/js/8.3f185511.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.cac334c8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.07207228.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><div><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/" class="nav-link home-link">记录 </a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="/list/" class="nav-link">文档</a></li><li class="nav-item"><a href="/tag/" class="nav-link">标签</a></li><li class="nav-item"><a href="https://github.com/sogud" target="_blank" rel="noopener noreferrer" class="nav-link external">Github</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/" class="nav-link mobile-home-link">记录 </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="/list/" class="nav-link">文档</a></li><li class="mobile-nav-item"><a href="/tag/" class="nav-link">标签</a></li><li class="mobile-nav-item"><a href="https://github.com/sogud" target="_blank" rel="noopener noreferrer" class="nav-link external">Github</a></li> <li class="mobile-nav-item"><!----></li></ul></div></div></div> <div class="content-wrapper"><div id="vuepress-theme-blog__post-layout"><article itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="vuepress-blog-theme-content"><header><h1 itemprop="name headline" class="post-title">
+        JavaScript 实现简单二叉查找树
+      </h1> <div class="post-meta"><!----> <div class="post-meta-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2018-01-13T16:07:32.000Z">
+      Sat Jan 13 2018
+    </time></div> <ul itemprop="keywords" class="post-meta-tags"><li class="post-tag" data-v-11530296><a href="/tag/JavaScript" data-v-11530296><span data-v-11530296>JavaScript</span></a></li><li class="post-tag" data-v-11530296><a href="/tag/算法" data-v-11530296><span data-v-11530296>算法</span></a></li></ul></div></header> <div itemprop="articleBody" class="content__default"><p><img src="http://or2vgb0pq.bkt.clouddn.com//18-10-29/46844758.jpg" alt="二叉树"></p> <p>二叉树：二叉树就是一种数据结构， 它的组织关系就像是自然界中的树一样。官方语言的定义是：是一个有限元素的集合,该集合或者为空、或者由一个称为根的元素及两个不相交的、被分别称为左子树和右子树的二叉树组成。</p> <p>节点： 树中的每个元素称为一个节点，</p> <p>根节点： 位于整棵树顶点的节点，它没有父节点。</p> <p>子节点： 其他节点的后代</p> <p>叶子节点: 没有子节点的元素称为叶子节点。</p> <h4 id="二叉树创建代码的实现"><a href="#二叉树创建代码的实现" class="header-anchor">#</a> 二叉树创建代码的实现</h4> <blockquote><p>创建二叉树</p></blockquote> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 声明根节点</span>
+<span class="token keyword">var</span> root <span class="token operator">=</span> <span class="token keyword">null</span>
+<span class="token comment">// 声明函数</span>
+<span class="token keyword">function</span> <span class="token function">BinarSearchTree</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> <span class="token function-variable function">Node</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>key <span class="token operator">=</span> key
+    <span class="token keyword">this</span><span class="token punctuation">.</span>left <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>right <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 这个方法会通过递归得调用自身，来找到新添加节点的合适位置</span>
+  <span class="token keyword">var</span> <span class="token function-variable function">insertNode</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">node<span class="token punctuation">,</span> newNode</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 判断插入左节点还是右节点,然后递归调用</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>newNode<span class="token punctuation">.</span>key <span class="token operator">&lt;=</span> node<span class="token punctuation">.</span>key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>left <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        node<span class="token punctuation">.</span>left <span class="token operator">=</span> newNode
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token function">insertNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token punctuation">,</span> newNode<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>right <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        node<span class="token punctuation">.</span>right <span class="token operator">=</span> newNode
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token function">insertNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">,</span> newNode<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 判断创建根节点还是插入子节点</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">insert</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 创建一个用来表示新节点的Node类实例，因此需要new一下Node类并传入需要插入的key值，它会自动初始化为左右节点为null的一个新节点</span>
+      <span class="token keyword">var</span> newNode <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Node</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+      <span class="token comment">// 先判断树是否为空，若为空，新插入的节点就作为根节点，如不为空，调用一个辅助方法insertNode()方法，将根节点和新节点传入</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        root <span class="token operator">=</span> newNode
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token function">insertNode</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> newNode<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//定义要插入的二叉树</span>
+<span class="token keyword">var</span> nodes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">]</span>
+<span class="token comment">// 实例化二叉树函数</span>
+<span class="token keyword">var</span> _binarSearchTree <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BinarSearchTree</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// 遍历数组插入节点</span>
+nodes<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">key</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  _binarSearchTree<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">//查看二叉树输出结果】</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+</code></pre></div><h4 id="二叉树的中序遍历"><a href="#二叉树的中序遍历" class="header-anchor">#</a> 二叉树的中序遍历</h4> <p>中序遍历（LDR）是二叉树遍历的一种，也叫做中根遍历、中序周游。在二叉树中，先左后根再右。巧记：左根右。</p> <p>中序便历可用于排序。</p> <p>以下代码先查找最左叶子节点然后打印出来，如果没有最左叶子节点则打印根节点，最后打印右子节点。</p> <blockquote><p>中序遍历</p></blockquote> <div class="language-javascript extra-class"><pre class="language-javascript"><code>      <span class="token keyword">var</span> <span class="token function-variable function">inOrderTraverseNode</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">node</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 判断当前节点如果不为空则递归查找节点，按照左根右的顺序</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>node <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 先查找左叶子节点，如果左叶子节点有值则递归此节点</span>
+          <span class="token function">inOrderTraverseNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+          <span class="token comment">// 如果没有左叶子节点则打印当前根节点</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>key<span class="token punctuation">)</span>
+          <span class="token comment">// 最后查找右子节点</span>
+          <span class="token function">inOrderTraverseNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      <span class="token comment">//中序遍历</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">inOrderTraverse</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 将二叉树根节点传入</span>
+        <span class="token function">inOrderTraverseNode</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><h4 id="二叉树的先序遍历"><a href="#二叉树的先序遍历" class="header-anchor">#</a> 二叉树的先序遍历</h4> <p>先序遍历(Pre-order)，按照根左右的顺序沿一定路径经过路径上所有的结点。在二叉树中，先根后左再右。巧记：根左右。</p> <p>先序遍历常用于复制二叉树。</p> <p>先序遍历与中序遍历代码很像，只不过先查找根节点打印出来，然后在查找最左叶子节点然后打印出来，最后打印右子节点。</p> <blockquote><p>先序遍历</p></blockquote> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> <span class="token function-variable function">preOrderTraverseNode</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">node</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>node <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 先打印当前节点然后在查找左右子节点</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>key<span class="token punctuation">)</span>
+    <span class="token function">preOrderTraverseNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+    <span class="token function">preOrderTraverseNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">preOrderTraverse</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">preOrderTraverseNode</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="二叉树的后序遍历"><a href="#二叉树的后序遍历" class="header-anchor">#</a> 二叉树的后序遍历</h4> <p>后序遍历（LRD）是二叉树遍历的一种，也叫做后根遍历、后序周游，可记做左右根。后序遍历有递归算法和非递归算法两种。在二叉树中，先左后右再根。巧记：左右根。</p> <p>后序遍历实际应用于操作系统的文件系统遍历中。</p> <p>后序遍历与上面两个遍历一样，这回变为左右根的顺序。</p> <blockquote><p>后序遍历</p></blockquote> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">postOrderTraverse</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">postOrderTraverseNode</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> <span class="token function-variable function">postOrderTraverseNode</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">node</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>node <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">postOrderTraverseNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+    <span class="token function">postOrderTraverseNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+    <span class="token comment">// 如果没有左右子节点最后打印根节点</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>key<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="二叉树查找最大值与最小值"><a href="#二叉树查找最大值与最小值" class="header-anchor">#</a> 二叉树查找最大值与最小值</h4> <p>二叉树的最左子节点为最小，最右节点为最大，按照这个规律我们只需要递归查找最左与最右子节点就可以查到最大与最下值。</p> <blockquote><p>查找最小节点</p></blockquote> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> <span class="token function-variable function">minNode</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">node</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 如果当前节点不为空并且含有左子节点</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>node <span class="token operator">&amp;&amp;</span> node<span class="token punctuation">.</span>left <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      node <span class="token operator">=</span> node<span class="token punctuation">.</span>left
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> node<span class="token punctuation">.</span>key
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 查找最小节点</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">min</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">minNode</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><blockquote><p>查找最大节点</p></blockquote> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> <span class="token function-variable function">maxNode</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">node</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 如果当前节点不为空并且含有右子节点</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>node <span class="token operator">&amp;&amp;</span> node<span class="token punctuation">.</span>right <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      node <span class="token operator">=</span> node<span class="token punctuation">.</span>right
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> node<span class="token punctuation">.</span>key
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 查找最大节点</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">max</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">maxNode</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="二叉树查找指定值"><a href="#二叉树查找指定值" class="header-anchor">#</a> 二叉树查找指定值</h4> <p>实现查找二叉树特定值这个方法首先检验 node 的合法性，如果为 null，直接退出，并返回 fasle。如果传入的 key 比当前传入 node 的 key 值小，它会继续递归查找 node 的左侧节点，反之，查找右侧节点。如果找到相等节点，直接退出，并返回 true。</p> <blockquote><p>查找指定值</p></blockquote> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> <span class="token function-variable function">searchNode</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">node<span class="token punctuation">,</span> key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 如果节点为空则返回</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>node <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>key <span class="token operator">&lt;</span> node<span class="token punctuation">.</span>key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 如果查找值小于当前节点值则查找左子节点</span>
+    <span class="token keyword">return</span> <span class="token function">searchNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>key <span class="token operator">&gt;</span> node<span class="token punctuation">.</span>key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 如果查找值大于当前节点值则查找右子节点</span>
+    <span class="token keyword">return</span> <span class="token function">searchNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 查找指定节点</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">search</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">searchNode</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="移除节点"><a href="#移除节点" class="header-anchor">#</a> 移除节点</h4> <p>移除节点的实现情况比较复杂，它会有三种不同的情况：</p> <ol><li><p>需要移除的节点是一个叶子节点</p></li> <li><p>需要移除的节点包含一个子节点</p></li> <li><p>需要移除的节点包含两个子节点</p></li></ol> <p>和实现搜索指定节点一元，要移除某个节点，必须先找到它所在的位置，因此移除方法的实现中部分代码和上面相同，其中，移除包含两个子节点的节点是最复杂的情况，它包含左侧节点和右侧节点，对它进行移除主要需要三个步骤：</p> <ol><li>需要找到它右侧子树中的最小节点来代替它的位置</li> <li>将它右侧子树中的最小节点移除</li> <li>将更新后的节点的引用指向原节点的父节点</li></ol> <p>有点绕，但必须这样，因为删除元素后的二叉搜索树必须保持它的排序性质。</p> <blockquote><p>移除节点</p></blockquote> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> <span class="token function-variable function">removeNode</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">node<span class="token punctuation">,</span> key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>node <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">null</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>key <span class="token operator">&lt;</span> node<span class="token punctuation">.</span>key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    node<span class="token punctuation">.</span>left <span class="token operator">=</span> <span class="token function">removeNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> node
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>key <span class="token operator">&gt;</span> node<span class="token punctuation">.</span>key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    node<span class="token punctuation">.</span>right <span class="token operator">=</span> <span class="token function">removeNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> node
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 需要移除的是一个叶子节点</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>left <span class="token operator">===</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> node<span class="token punctuation">.</span>right <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      node <span class="token operator">=</span> <span class="token keyword">null</span>
+      <span class="token keyword">return</span> node
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//需要移除的节点包含一个叶子节点</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>left <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      node <span class="token operator">=</span> node<span class="token punctuation">.</span>right
+      <span class="token keyword">return</span> node
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>left <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      node <span class="token operator">=</span> node<span class="token punctuation">.</span>left
+      <span class="token keyword">return</span> node
+    <span class="token punctuation">}</span>
+    <span class="token comment">//需要移除的节点包含两个子节点</span>
+    <span class="token keyword">var</span> aux <span class="token operator">=</span> <span class="token function">findMinNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+    node<span class="token punctuation">.</span>key <span class="token operator">=</span> aux<span class="token punctuation">.</span>key
+    node<span class="token punctuation">.</span>right <span class="token operator">=</span> <span class="token function">removeNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">,</span> axu<span class="token punctuation">.</span>key<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> node
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> <span class="token function-variable function">findMinNode</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">node</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>node <span class="token operator">&amp;&amp;</span> node<span class="token punctuation">.</span>left <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      node <span class="token operator">=</span> node<span class="token punctuation">.</span>left
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> node
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//移除节点</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">remove</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">removeNode</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><blockquote><p>完整代码</p></blockquote> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 声明根节点</span>
+<span class="token keyword">var</span> root <span class="token operator">=</span> <span class="token keyword">null</span>
+<span class="token comment">// 声明函数</span>
+<span class="token keyword">function</span> <span class="token function">BinarSearchTree</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> <span class="token function-variable function">Node</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>key <span class="token operator">=</span> key
+    <span class="token keyword">this</span><span class="token punctuation">.</span>left <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>right <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 判断创建根节点还是插入子节点</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">insert</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> newNode <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Node</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      root <span class="token operator">=</span> newNode
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token function">insertNode</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> newNode<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 判断插入左节点还是右节点</span>
+  <span class="token keyword">var</span> <span class="token function-variable function">insertNode</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">node<span class="token punctuation">,</span> newNode</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>newNode<span class="token punctuation">.</span>key <span class="token operator">&lt;=</span> node<span class="token punctuation">.</span>key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>left <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        node<span class="token punctuation">.</span>left <span class="token operator">=</span> newNode
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token function">insertNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token punctuation">,</span> newNode<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>right <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        node<span class="token punctuation">.</span>right <span class="token operator">=</span> newNode
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token function">insertNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">,</span> newNode<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">var</span> <span class="token function-variable function">inOrderTraverseNode</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">node</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 判断当前节点如果不为空则递归查找节点，按照左根右的顺序</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>node <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 先查找左叶子节点，如果左叶子节点有值则递归此节点</span>
+      <span class="token function">inOrderTraverseNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+      <span class="token comment">// 如果没有左叶子节点则打印当前根节点</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>key<span class="token punctuation">)</span>
+      <span class="token comment">// 最后查找右子节点</span>
+      <span class="token function">inOrderTraverseNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">//中序遍历</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">inOrderTraverse</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 将二叉树根节点传入</span>
+    <span class="token function">inOrderTraverseNode</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">var</span> <span class="token function-variable function">preOrderTraverseNode</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">node</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>node <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>key<span class="token punctuation">)</span>
+      <span class="token function">preOrderTraverseNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+      <span class="token function">preOrderTraverseNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 先序遍历</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">preOrderTraverse</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">preOrderTraverseNode</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">var</span> <span class="token function-variable function">postOrderTraverseNode</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">node</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>node <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">postOrderTraverseNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+      <span class="token function">postOrderTraverseNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+      <span class="token comment">// 如果没有左右子节点最后打印根节点</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>key<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 后序遍历</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">postOrderTraverse</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">postOrderTraverseNode</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">var</span> <span class="token function-variable function">minNode</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">node</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 如果当前节点不为空并且含有左子节点</span>
+      <span class="token keyword">while</span> <span class="token punctuation">(</span>node <span class="token operator">&amp;&amp;</span> node<span class="token punctuation">.</span>left <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        node <span class="token operator">=</span> node<span class="token punctuation">.</span>left
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> node<span class="token punctuation">.</span>key
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 查找最小节点</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">min</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">minNode</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">var</span> <span class="token function-variable function">maxNode</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">node</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 如果当前节点不为空并且含有右子节点</span>
+      <span class="token keyword">while</span> <span class="token punctuation">(</span>node <span class="token operator">&amp;&amp;</span> node<span class="token punctuation">.</span>right <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        node <span class="token operator">=</span> node<span class="token punctuation">.</span>right
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> node<span class="token punctuation">.</span>key
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">//查找最大节点</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">max</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">maxNode</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">var</span> <span class="token function-variable function">searchNode</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">node<span class="token punctuation">,</span> key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 如果节点为空则返回</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>node <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>key <span class="token operator">&lt;</span> node<span class="token punctuation">.</span>key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 如果查找值小于当前节点值则查找左子节点</span>
+      <span class="token keyword">return</span> <span class="token function">searchNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>key <span class="token operator">&gt;</span> node<span class="token punctuation">.</span>key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 如果查找值大于当前节点值则查找右子节点</span>
+      <span class="token keyword">return</span> <span class="token function">searchNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 查找指定节点</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">search</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">searchNode</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">var</span> <span class="token function-variable function">removeNode</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">node<span class="token punctuation">,</span> key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>node <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>key <span class="token operator">&lt;</span> node<span class="token punctuation">.</span>key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      node<span class="token punctuation">.</span>left <span class="token operator">=</span> <span class="token function">removeNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+      <span class="token keyword">return</span> node
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>key <span class="token operator">&gt;</span> node<span class="token punctuation">.</span>key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      node<span class="token punctuation">.</span>right <span class="token operator">=</span> <span class="token function">removeNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+      <span class="token keyword">return</span> node
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 需要移除的是一个叶子节点</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>left <span class="token operator">===</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> node<span class="token punctuation">.</span>right <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        node <span class="token operator">=</span> <span class="token keyword">null</span>
+        <span class="token keyword">return</span> node
+      <span class="token punctuation">}</span>
+
+      <span class="token comment">//需要移除的节点包含一个叶子节点</span>
+
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>left <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        node <span class="token operator">=</span> node<span class="token punctuation">.</span>right
+        <span class="token keyword">return</span> node
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>left <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        node <span class="token operator">=</span> node<span class="token punctuation">.</span>left
+        <span class="token keyword">return</span> node
+      <span class="token punctuation">}</span>
+      <span class="token comment">//需要移除的节点包含两个子节点</span>
+      <span class="token keyword">var</span> aux <span class="token operator">=</span> <span class="token function">findMinNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+      node<span class="token punctuation">.</span>key <span class="token operator">=</span> aux<span class="token punctuation">.</span>key
+      node<span class="token punctuation">.</span>right <span class="token operator">=</span> <span class="token function">removeNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">,</span> axu<span class="token punctuation">.</span>key<span class="token punctuation">)</span>
+      <span class="token keyword">return</span> node
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">var</span> <span class="token function-variable function">findMinNode</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">node</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">while</span> <span class="token punctuation">(</span>node <span class="token operator">&amp;&amp;</span> node<span class="token punctuation">.</span>left <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        node <span class="token operator">=</span> node<span class="token punctuation">.</span>left
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> node
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token keyword">null</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">//移除节点</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">remove</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">removeNode</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> nodes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">]</span>
+<span class="token keyword">var</span> _binarSearchTree <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BinarSearchTree</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+nodes<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">key</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  _binarSearchTree<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// 打印插入完的二叉树</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+<span class="token comment">// 调用中序遍历方法</span>
+_binarSearchTree<span class="token punctuation">.</span><span class="token function">inOrderTraverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// 调用先序遍历方法</span>
+_binarSearchTree<span class="token punctuation">.</span><span class="token function">preOrderTraverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// 调用后序遍历方法</span>
+_binarSearchTree<span class="token punctuation">.</span><span class="token function">postOrderTraverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// 查找最小值</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_binarSearchTree<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">// 查找最大值</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_binarSearchTree<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">// 查找特定值</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_binarSearchTree<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">// 删除节点</span>
+_binarSearchTree<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>
+_binarSearchTree<span class="token punctuation">.</span><span class="token function">inOrderTraverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></div> <footer><!----> <hr> <!----></footer></article> <!----></div></div> <footer class="footer" data-v-246f3a3e><div class="footer-left-wrap" data-v-246f3a3e><ul class="links" data-v-246f3a3e><li class="links-item" data-v-246f3a3e><a href="/2018/01/13/javascript%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91/github.com.html" class="nav-link" data-v-246f3a3e>GitHub</a></li><li class="links-item" data-v-246f3a3e><a href="/2018/01/13/javascript%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91/github.com.html" class="nav-link" data-v-246f3a3e>Twitter</a></li></ul></div> <div class="footer-right-wrap" data-v-246f3a3e></div></footer></div></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.d901bced.js" defer></script><script src="/assets/js/9.f70bb51d.js" defer></script><script src="/assets/js/4.04f9b0a3.js" defer></script><script src="/assets/js/15.c3b09a13.js" defer></script><script src="/assets/js/10.6c07ca04.js" defer></script>
+  </body>
+</html>

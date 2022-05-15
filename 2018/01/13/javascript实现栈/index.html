@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>javascript 实现栈 | 记录</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.07207228.css" as="style"><link rel="preload" href="/assets/js/app.d901bced.js" as="script"><link rel="preload" href="/assets/js/9.f70bb51d.js" as="script"><link rel="preload" href="/assets/js/4.04f9b0a3.js" as="script"><link rel="preload" href="/assets/js/17.e4d9cc9a.js" as="script"><link rel="preload" href="/assets/js/10.6c07ca04.js" as="script"><link rel="prefetch" href="/assets/js/11.ded4fa08.js"><link rel="prefetch" href="/assets/js/12.1566e8e9.js"><link rel="prefetch" href="/assets/js/13.8ebadafa.js"><link rel="prefetch" href="/assets/js/14.2eae6fcb.js"><link rel="prefetch" href="/assets/js/15.c3b09a13.js"><link rel="prefetch" href="/assets/js/16.82983314.js"><link rel="prefetch" href="/assets/js/18.59d74889.js"><link rel="prefetch" href="/assets/js/19.a44f1b3b.js"><link rel="prefetch" href="/assets/js/20.59422492.js"><link rel="prefetch" href="/assets/js/21.3975ae56.js"><link rel="prefetch" href="/assets/js/22.fa8d8bd5.js"><link rel="prefetch" href="/assets/js/23.779af9e6.js"><link rel="prefetch" href="/assets/js/24.f87843ba.js"><link rel="prefetch" href="/assets/js/25.f7a5d2f5.js"><link rel="prefetch" href="/assets/js/26.3b6b0728.js"><link rel="prefetch" href="/assets/js/27.78ee38f2.js"><link rel="prefetch" href="/assets/js/28.cadc989a.js"><link rel="prefetch" href="/assets/js/29.d4a4f211.js"><link rel="prefetch" href="/assets/js/3.b14bc519.js"><link rel="prefetch" href="/assets/js/30.53680683.js"><link rel="prefetch" href="/assets/js/31.2da0dfc8.js"><link rel="prefetch" href="/assets/js/32.52a3bbdb.js"><link rel="prefetch" href="/assets/js/33.a7e071b3.js"><link rel="prefetch" href="/assets/js/34.d2dfc4ee.js"><link rel="prefetch" href="/assets/js/35.08756908.js"><link rel="prefetch" href="/assets/js/36.f340a051.js"><link rel="prefetch" href="/assets/js/37.167fee8d.js"><link rel="prefetch" href="/assets/js/38.54b353a3.js"><link rel="prefetch" href="/assets/js/39.be2bf926.js"><link rel="prefetch" href="/assets/js/40.813518ee.js"><link rel="prefetch" href="/assets/js/41.7c06cc03.js"><link rel="prefetch" href="/assets/js/42.d860adcc.js"><link rel="prefetch" href="/assets/js/43.39f8f3b7.js"><link rel="prefetch" href="/assets/js/5.569dcaa8.js"><link rel="prefetch" href="/assets/js/6.571a211f.js"><link rel="prefetch" href="/assets/js/7.86d3a8a9.js"><link rel="prefetch" href="/assets/js/8.3f185511.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.cac334c8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.07207228.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><div><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/" class="nav-link home-link">记录 </a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="/list/" class="nav-link">文档</a></li><li class="nav-item"><a href="/tag/" class="nav-link">标签</a></li><li class="nav-item"><a href="https://github.com/sogud" target="_blank" rel="noopener noreferrer" class="nav-link external">Github</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/" class="nav-link mobile-home-link">记录 </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="/list/" class="nav-link">文档</a></li><li class="mobile-nav-item"><a href="/tag/" class="nav-link">标签</a></li><li class="mobile-nav-item"><a href="https://github.com/sogud" target="_blank" rel="noopener noreferrer" class="nav-link external">Github</a></li> <li class="mobile-nav-item"><!----></li></ul></div></div></div> <div class="content-wrapper"><div id="vuepress-theme-blog__post-layout"><article itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="vuepress-blog-theme-content"><header><h1 itemprop="name headline" class="post-title">
+        javascript 实现栈
+      </h1> <div class="post-meta"><!----> <div class="post-meta-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2018-01-13T16:07:32.000Z">
+      Sat Jan 13 2018
+    </time></div> <ul itemprop="keywords" class="post-meta-tags"><li class="post-tag" data-v-11530296><a href="/tag/JavaScript" data-v-11530296><span data-v-11530296>JavaScript</span></a></li><li class="post-tag" data-v-11530296><a href="/tag/算法" data-v-11530296><span data-v-11530296>算法</span></a></li></ul></div></header> <div itemprop="articleBody" class="content__default"><p>栈是一种遵从后进先出（LIFO）原则的有序集合。新添加的或待删除的元素都保存在栈的 末尾，称作栈顶，另一端就叫栈底。在栈里，新元素都靠近栈顶，旧元素都接近栈底。</p> <p>在现实生活中也能发现很多栈的例子。例如，下图里的一摞书或者餐厅里堆放的盘子。</p> <p>我们将创建一个类来表示栈。让我们从基础开始，先声明这个类：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">Stack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">//各种属性和方法的声明</span>
+  <span class="token keyword">var</span> items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token comment">//添加一个（或几个）新元素到栈顶</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">push</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    items<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">//移除栈顶的元素，同时返回被移除的元素。</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">pop</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> items<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">//返回栈顶的元素，不对栈做任何修改（这个方法不会移除栈顶的元素，仅仅返 回它）</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">peek</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> items<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">//如果栈里没有任何元素就返回true，否则返回false。</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">isEmpty</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> items <span class="token operator">==</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">//移除栈里的所有元素</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">clear</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">//返回栈里的元素个数。</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">size</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> items<span class="token punctuation">.</span>length
+  <span class="token punctuation">}</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">print</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>items<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>使用刚刚声明的栈方法实现一个十进制数转二进制数的算法</p> <p>要把十进制转化成二进制，我们可以将该十进制数字和 2 整除（二进制是满二进一），直到结 果是 0 为止</p> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">divideBy2</span><span class="token punctuation">(</span><span class="token parameter">decNumber</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+  <span class="token keyword">var</span> remStack <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Stack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      rem<span class="token punctuation">,</span>
+      binaryString <span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>decNumber <span class="token operator">&gt;</span><span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+    rem <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>decNumber <span class="token operator">%</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    remStack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>rem<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    decNumber <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>decNumber <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>remStack<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    binaryString <span class="token operator">+=</span> remStack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> binaryString
+<span class="token punctuation">}</span>
+</code></pre></div><p>我们很容易修改之前的算法，使之能把十进制转换成任何进制。除了让十进制数字和 2 整除 转成二进制数，还可以传入其他任意进制的基数为参数，就像下面算法这样：</p> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">baseConverter</span><span class="token punctuation">(</span><span class="token parameter">decNumber<span class="token punctuation">,</span>base</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+  <span class="token keyword">var</span> remStack <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Stack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      rem<span class="token punctuation">,</span>
+      baseString <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">,</span>
+      digits <span class="token operator">=</span> <span class="token string">'0123456789ABCDEF'</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>decNumber <span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    rem <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>decNumber <span class="token operator">%</span> base<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    remStack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>rem<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    decNumber <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>decNumber <span class="token operator">/</span> base<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>remStack<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    baseString <span class="token operator">+=</span>  digits<span class="token punctuation">[</span>remStack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> baseString<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer><!----> <hr> <!----></footer></article> <!----></div></div> <footer class="footer" data-v-246f3a3e><div class="footer-left-wrap" data-v-246f3a3e><ul class="links" data-v-246f3a3e><li class="links-item" data-v-246f3a3e><a href="/2018/01/13/javascript%E5%AE%9E%E7%8E%B0%E6%A0%88/github.com.html" class="nav-link" data-v-246f3a3e>GitHub</a></li><li class="links-item" data-v-246f3a3e><a href="/2018/01/13/javascript%E5%AE%9E%E7%8E%B0%E6%A0%88/github.com.html" class="nav-link" data-v-246f3a3e>Twitter</a></li></ul></div> <div class="footer-right-wrap" data-v-246f3a3e></div></footer></div></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.d901bced.js" defer></script><script src="/assets/js/9.f70bb51d.js" defer></script><script src="/assets/js/4.04f9b0a3.js" defer></script><script src="/assets/js/17.e4d9cc9a.js" defer></script><script src="/assets/js/10.6c07ca04.js" defer></script>
+  </body>
+</html>
